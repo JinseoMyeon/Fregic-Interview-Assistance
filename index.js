@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, MessageEmbed } = require("discord.js");
 
 const client = new Client({
     intents: 32767,
@@ -20,9 +20,9 @@ function delay(ms) {
 require("./handler")(client);
 
 client.login(client.config.token);
-client.on("ready", () => {
+client.on("ready", async () => {
     console.log(`${client.user.tag} iS uP aNd ReAdY tO gO!`);
-    client.user.setActivity("여러분을 환영");
+    client.user.setActivity("여러분의 답변을 검토");
 });
 
 client.on("message", async (message) => {
